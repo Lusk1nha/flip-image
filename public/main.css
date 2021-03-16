@@ -17,7 +17,7 @@ body {
   background-color: var(--primary-main-color);
 
   width: 100%;
-  min-height: 75vh;
+  min-height: 70vh;
 
   display: flex;
   align-items: center;
@@ -25,13 +25,15 @@ body {
 
   padding: 5%;
 
+  overflow: none;
+
 }
 
 #container {
   width: 95%;
 
   max-width: 600px;
-  height: 75vh;
+  height: auto;
 
   display: flex;
   flex-direction: column;
@@ -41,22 +43,29 @@ body {
 }
 
 .image-container {
+  background-size: contain;
+  image-rendering: optimizeQuality;
+
   width: 100%;
 
-  max-height: 800px;
+  max-height: 600px;
   height: auto;
+
+  margin-bottom: 50px;
 
   border: 2px solid var(--secondary-main-color);
   border-radius: 8px;
 
   box-shadow: 0 0 15px var(--secondary-main-color);
 
+  transform: scale(1, 1);
+
   transition: all 0.4s;
 
 }
 
 .image-container:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 
   box-shadow: 0 0 30px var(--secondary-main-color);
 
@@ -73,6 +82,8 @@ input {
   align-items: center;
   justify-content: center;
 
+  margin-bottom: 50px;
+
   border-radius: 4px;
 
   outline: none;
@@ -82,16 +93,18 @@ input {
 input::-webkit-file-upload-button {
   background: transparent;
 
-  width: 40%;
+  width: 45%;
   height: 40px;
 
   color: green;
-  font-size: 3.4vmin;
+  font-size: 3.5vmin;
+  font-weight: 600;
 
   margin-right: 30px;
 
   border: 1px solid green;
   border-radius: 8px;
+  outline: none;
 
   transition: color 0.4s, background 0.4s;
 
@@ -102,15 +115,29 @@ input::-webkit-file-upload-button:hover {
 
   color: #EEEEEE;
 
-  outline: none;
+}
 
+.buttons {
+  width: 90%;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 button {
   background: transparent;
 
-  width: 90%;
-  height: 45px;
+  width: 150px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 20px;
 
   border: 1px solid #EEE;
   border-radius: 8px;
@@ -120,9 +147,18 @@ button {
 
 }
 
+button:first-child img {
+  transform: scaleX(-1);
+
+}
+
 button img {
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
+
+  filter: invert(90%) sepia(0%) saturate(0%) brightness(100%) contrast(80%);
+
+  transition: all 0.4s;
 
 }
 
@@ -130,5 +166,33 @@ button:hover {
   background-color: #EEEEEE;
 
   box-shadow: 0 0 5px #EEE;
+
+}
+
+button:hover img {
+  filter: none;
+
+}
+
+@media (min-width: 550px) {
+  body {
+    min-height: 100vh;
+
+  }
+
+  #container {
+    max-width: 700px;
+
+  }
+
+  input {
+    font-size: 20px;
+
+  }
+
+  input::-webkit-file-upload-button {
+    font-size: 20px;
+
+  }
 
 }
