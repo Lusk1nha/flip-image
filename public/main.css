@@ -143,6 +143,8 @@ button {
   border-radius: 8px;
   outline: none;
 
+  cursor: none;
+
   transition: background 0.4s, box-shadow 0.3s;
 
 }
@@ -194,5 +196,4 @@ button:hover img {
     font-size: 20px;
 
   }
-
 }

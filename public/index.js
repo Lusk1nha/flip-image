@@ -6,11 +6,47 @@ const imgContainer = document.querySelector('.image-container')
 let imgPosition = [1, 1]
 
 btnLeft.addEventListener('click', () => {
-  console.log(imgPosition[0])
 
+  if ( imgPosition[0] == 1 && imgPosition[1] == 1 ) {
+    imgPosition[0] = 1
+    imgPosition[1] = -1
+
+  } else if ( imgPosition[0] == 1 && imgPosition[1] == -1 ) {
+    imgPosition[0] = -1
+    imgPosition[1] = -1
+  
+  } else if ( imgPosition[0] == -1 && imgPosition[1] == -1 ) {
+    imgPosition[0] = -1
+    imgPosition[1] = 1
+
+  } else if ( imgPosition[0] == -1 && imgPosition[1] == 1 ) {
+    imgPosition[0] = 1
+    imgPosition[1] = 1
+
+  }
+
+  return imgContainer.style.transform = `scale(${imgPosition[0]}, ${imgPosition[1]})`
 })
 
 btnRight.addEventListener('click', () => {
-  console.log('right')
 
+  if ( imgPosition[0] == 1 && imgPosition[1] == 1 ) {
+  imgPosition[0] = -1
+  imgPosition[1] = 1
+
+  } else if ( imgPosition[0] == -1 && imgPosition[1] == 1 ) {
+    imgPosition[0] = -1
+    imgPosition[1] = -1
+  
+  } else if ( imgPosition[0] == -1 && imgPosition[1] == -1 ) {
+    imgPosition[0] = 1
+    imgPosition[1] = -1
+
+  } else {
+    imgPosition[0] = 1
+    imgPosition[1] = 1
+
+  }
+  
+  return imgContainer.style.transform = `scale(${imgPosition[0]}, ${imgPosition[1]})`
 })
